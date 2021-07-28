@@ -27,32 +27,24 @@
     <div class="formInput">
       <form>
         <div class="row">
-
-          <div class="firstColumn">
-            <label>Birth Location:</label>
-          </div>
+          <div class="firstColumn"><label>Birth Location:</label> </div>
           <div class="secondColumn">
-            <input type="text" placeholder="Example: Seattle">
+            <input type="text" placeholder="Birth location" id="userloc" />
           </div>
-
-
           <div class="firstColumn">
             <label>Birth Date: </label>
           </div>
           <div class="secondColumn">
-            <input type="date" name="birtdate" placeholder="select Birth date">
+            <input type="date" id="bday" placeholder="select Birth date">
           </div>
-
-
-          <div class="firstColumn"></div>
-          <div class="secondColumn">
-            <button type="submit" class="button">submit</button>
-          </div>
-
+        <div class="firstColumn"></div>
+        <div class="secondColumn">
+        <button id="submit" class="button">Submit</button>
         </div>
+         <!-- <h3 id="response"></h3>-->
+         </div>
       </form>
     </div>
-
 
     <div class="row">
       <div class="half-row">
@@ -71,6 +63,7 @@
 
 
   </div>
+   <script src="./docs/js/script.js" ></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>

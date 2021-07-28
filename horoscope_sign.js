@@ -1,50 +1,15 @@
 //A function that returns the horoscope Sign
 
-var submitEl = document.querySelector("#submit");
-var userLoc = document.querySelector("#userloc");
-var birthDate = document.querySelector("#bday");
-
-
-// Action to be performed on click store in named function
-function showResponse(event) {
-  // Prevent default action
-  event.preventDefault();
-  var bornDate= birthDate.value;
-  var birthLocation =userLoc.value;
-  var response = "Birth Location: " + userLoc.value + "and  Birth Date: " + birthDate.value + ".";
- console.log(response);
-  //
- // submissionResponseEl.textContent = response;
-}
-  
-// Add listener to submit element
-submitEl.addEventListener("click", showResponse);
-
-
-
-
-///-------------------------
 var signContent = document.querySelector('#signtext');
 var thesign= horoscope_sign(12,25);
-//console.log(thesign);
-//signContent.innerHTML=" <h1>Your horoscope sign is : " + thesign +"</h1>";
+console.log(thesign);
+signContent.innerHTML=" <h1>Your horoscope sign is : " + thesign +"</h1>";
 //return_astrological (thesign);
 born_date="1969-12-25" ; //YYYY-mo-day
-//return_news(1969,12,25);
-//var btnEl = document.querySelector("#button1");
+return_news(1969,12,25);
+
 // RETURNS Astrological SIGNS
-function showInput(){
-   console.log(target);
-     var location= document.getElementById("location").value;;
-  var bdate=document.getElementById("bday").value();
 
-  console.log("bday " + bdate);
-  console.log( location);
-
-}
-
-
-//btnEl.addEventListener('submit',showInput);
 function return_astrological (sign){
    fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign +"&day=today", {
 	"method": "POST",
