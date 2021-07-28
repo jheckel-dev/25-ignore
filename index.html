@@ -25,14 +25,14 @@
   </header>
   <div class="wrapper">
     <div class="formInput">
-      <form>
+      <form id="form">
         <div class="row">
 
           <div class="firstColumn">
             <label>Birth Location:</label>
           </div>
           <div class="secondColumn">
-            <input type="text" placeholder="Example: Seattle">
+            <input type="text" placeholder="Example: Seattle" id="birthLocation">
           </div>
 
 
@@ -40,13 +40,13 @@
             <label>Birth Date: </label>
           </div>
           <div class="secondColumn">
-            <input type="date" name="birtdate" placeholder="select Birth date">
+            <input type="date" id="birthDate" name="birtdate" placeholder="select Birth date">
           </div>
 
 
           <div class="firstColumn"></div>
           <div class="secondColumn">
-            <button type="submit" class="button">submit</button>
+            <button type="submit" id="submit">submit</button>
           </div>
 
         </div>
@@ -76,5 +76,6 @@
     <script>
       $(document).foundation();
     </script>
+    <script src="docs/js/script.js"></script>
   </body>
 </html>
