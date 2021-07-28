@@ -1,10 +1,22 @@
-// grab form items from search and turn into variables
-
+// declre varibales
 var birthLocation = document.querySelector("#birthLocation");
 var birthDate = document.querySelector("#birthDate");
 var submitEl = document.querySelector("#submit");
+
+
+// Declare variable containers to fill
+
+// News container
 var mostReadEl = document.querySelector("#newsContent");
 
+//Astrological containers
+
+var colorEl = document.querySelector("#color");
+var compatibilityEl = document.querySelector("#compatibility");
+var descriptionEl = document.querySelector("#description");
+var luckyNumberEl = document.querySelector("#luckyNumber");
+var lucktyTimeEl = document.querySelector("#luckyTime");
+var moodEl = document.querySelector("#mood");
 
 // delacre date values
 
@@ -24,6 +36,7 @@ function renderSearch(event) {
   event.preventDefault();
   
   // convert input date into separate variables
+
   year = birthDate.value.substring(0,4);
   month = birthDate.value.substring(5,7);
   day = birthDate.value.substring(8,10);
@@ -33,6 +46,10 @@ function renderSearch(event) {
   // pass variables into sign finder
    horoscopeSignFinder(month, day);
    getNews(year, month, day);
+
+   // pass variable into hosroscope finder
+
+   generateAstrological(city);
 }
 
 // generate astrological sign form date input
@@ -66,10 +83,10 @@ function horoscopeSignFinder(month,day) {
    // if (month == "x" || day == "y") return;
    // pass sign into function to generate horoscope
    generateAstrological(sign);
-   // console.log(sign);
+   console.log(sign);
  }
 
-// fetches astrological data from third party PI
+// fetches astrological data from third party API
 
 function generateAstrological (sign){
    fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign +"&day=today", {
@@ -81,14 +98,14 @@ function generateAstrological (sign){
 })
    .then(response => {
       if (!response.ok) {
-         signContent.innerHTML="There is no data for this year";
+         // signContent.innerHTML="There is no data for this year";
          throw response.json();
       }
       return response.json()
    })
    .then(function (data) {
    //  console.log(data);
-    displayAstrological(data);
+   //  displayAstrological(data);
    })
    .catch(err => {
       console.error(err);
@@ -96,7 +113,7 @@ function generateAstrological (sign){
 }
 
 function displayAstrological(astroData) {
-   // console.log(astroData);
+   console.log(astroData);
 }
 
 
@@ -124,7 +141,7 @@ function getNews (year, month, day){
       return response.json()
    })
    .then(function (data) {
-      console.log(data);
+      // console.log(data);
       if (data.mostread.articles.length === 0) {
          mostReadEl = "There are no events for this day"
          return;
@@ -155,6 +172,7 @@ function getNews (year, month, day){
    });
    
 }
+
 
 // Add listener to submit element for searhc function
 submitEl.addEventListener("click", renderSearch);
