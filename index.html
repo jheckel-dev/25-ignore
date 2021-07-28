@@ -1,34 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<!doctype html>
+<html class="no-js" lang="en">
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Sample</h1>
-    </header>
-    <div class="container-fluid">
-      <div id="signtext"></div>
-    </div>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./horoscope_sign.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What happened the day I was born</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=STIX+Two+Math&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div>
+      <h1>What happened the day I was born?</h1>
+    </div>
+    <div>
+      <h5>Enter your information to see what was going on when you were born!</h5>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div class="formInput">
+      <form>
+        <div class="row">
+
+          <div class="firstColumn">
+            <label>Birth Location:</label>
+          </div>
+          <div class="secondColumn">
+            <input type="text" placeholder="Example: Seattle">
+          </div>
+
+
+          <div class="firstColumn">
+            <label>Birth Date: </label>
+          </div>
+          <div class="secondColumn">
+            <input type="date" name="birtdate" placeholder="select Birth date">
+          </div>
+
+
+          <div class="firstColumn"></div>
+          <div class="secondColumn">
+            <button type="submit" class="button">submit</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+
+    <div class="row">
+      <div class="half-row">
+        <h3>News</h3>
+      </div>
+      <div class="half-row">
+        <h3>Astronomy</h3>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Created by the UW code bootcamp team</p>
+    <p><span class="">Ben Koala&nbsp;,&nbsp;Jalen Heckel&nbsp;,&nbsp;Taylor Anderson&nbsp;,&nbsp;Elham Bazazzadeh</span>
+    </p>
+  </div>
+
+
+  </div>
+</body>
+
 </html>
