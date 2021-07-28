@@ -1,12 +1,25 @@
+var submit = document.querySelector("#submitBtn");
+
+submit.addEventListener("click", function(event) {
+    event.preventDefault;
+
+    var birthLocation = document.birthform.birthInput.value();
+    var birthDate = document.birthform.birthDay.value();
+
+    console.log(birthDate);
+    console.log(birthLocation);
+
+});
+
 //A function that returns the horoscope Sign
 
 var signContent = document.querySelector('#signtext');
 var thesign= horoscope_sign(12,25);
-console.log(thesign);
-signContent.innerHTML=" <h1>Your horoscope sign is : " + thesign +"</h1>";
+// console.log(thesign);
+// signContent.innerHTML=" <h1>Your horoscope sign is : " + thesign +"</h1>";
 //return_astrological (thesign);
-born_date="1969-12-25" ; //YYYY-mo-day
-return_news(1969,12,25);
+// born_date="1969-12-25" ; //YYYY-mo-day
+// return_news(1969,12,25);
 
 // RETURNS Astrological SIGNS
 
