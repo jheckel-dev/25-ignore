@@ -1,34 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <title>What happened the day I was born</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="docs/css/style.css">
   </head>
-
   <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Sample</h1>
-    </header>
-    <div class="container-fluid">
-      <div id="signtext"></div>
-    </div>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./horoscope_sign.js"></script>
+
+<div id ="callout" class="callout large">
+    <div class="row column text-center">
+      <h1>What happened the day I was born?</h1>
+      <p class="lead">Enter your information to see what was going on when you were born!</p>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="center">
+    <div class="callout secondary">
+      <form>
+        <div class="row">
+          <div class="small-12 columns">
+            <label>Birth Location:
+              <input type="text" placeholder="Example: Seattle">
+            </label>
+          </div>
+          <div class="small-12 columns">
+            <label>Birth Date:
+                <input type="date" name="birtdate" placeholder="select Birth date" >
+            </label>
+            <button type="submit" class="button">Enter</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class = "row">
+    <div class="medium-6 columns">
+        <h3>News</h3>
+    </div>
+    <div class="medium-6 columns">
+        <h3>Astronomy</h3>
+    </div>
+</div>
+<div class="row column">
+    <hr>
+   <p>Created by the UW code bootcamp team</p>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
