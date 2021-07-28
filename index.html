@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>What happened the day I was born</title>
@@ -13,49 +14,63 @@
   </head>
   <body>
 
-<div id ="callout" class="callout large">
-    <div class="row column text-center">
+<body>
+  <header class="header">
+    <div>
       <h1>What happened the day I was born?</h1>
-      <p class="lead">Enter your information to see what was going on when you were born!</p>
     </div>
-</div>
-
-<br>
-
-<div class="row">
-  <div class="center">
-    <div class="callout secondary">
+    <div>
+      <h5>Enter your information to see what was going on when you were born!</h5>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div class="formInput">
       <form>
         <div class="row">
-          <div class="small-12 columns">
-            <label>Birth Location:
-              <input type="text" placeholder="Example: Seattle">
-            </label>
+
+          <div class="firstColumn">
+            <label>Birth Location:</label>
           </div>
-          <div class="small-12 columns">
-            <label>Birth Date:
-                <input type="date" name="birtdate" placeholder="select Birth date" >
-            </label>
-            <button type="submit" class="button">Enter</button>
+          <div class="secondColumn">
+            <input type="text" placeholder="Example: Seattle">
           </div>
+
+
+          <div class="firstColumn">
+            <label>Birth Date: </label>
+          </div>
+          <div class="secondColumn">
+            <input type="date" name="birtdate" placeholder="select Birth date">
+          </div>
+
+
+          <div class="firstColumn"></div>
+          <div class="secondColumn">
+            <button type="submit" class="button">submit</button>
+          </div>
+
         </div>
       </form>
     </div>
-  </div>
-</div>
-<div class = "row">
-    <div class="medium-6 columns">
+
+
+    <div class="row">
+      <div class="half-row">
         <h3>News</h3>
-    </div>
-    <div class="medium-6 columns">
+      </div>
+      <div class="half-row">
         <h3>Astronomy</h3>
+      </div>
     </div>
-</div>
-<div class="row column">
-    <hr>
-   <p>Created by the UW code bootcamp team</p>
+  </div>
+  <div class="footer">
+    <p>Created by the UW code bootcamp team</p>
+    <p><span class="">Ben Koala&nbsp;,&nbsp;Jalen Heckel&nbsp;,&nbsp;Taylor Anderson&nbsp;,&nbsp;Elham Bazazzadeh</span>
+    </p>
   </div>
 
+
+  </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
