@@ -1,4 +1,4 @@
-// declre varibales
+// declre search varibales
 var birthLocation = document.querySelector("#birthLocation");
 var birthDate = document.querySelector("#birthDate");
 var submitEl = document.querySelector("#submit");
@@ -15,7 +15,7 @@ var colorEl = document.querySelector("#color");
 var compatibilityEl = document.querySelector("#compatibility");
 var descriptionEl = document.querySelector("#description");
 var luckyNumberEl = document.querySelector("#luckyNumber");
-var lucktyTimeEl = document.querySelector("#luckyTime");
+var luckyTimeEl = document.querySelector("#luckyTime");
 var moodEl = document.querySelector("#mood");
 
 // delacre date values
@@ -45,11 +45,7 @@ function renderSearch(event) {
 
   // pass variables into sign finder
    horoscopeSignFinder(month, day);
-   getNews(year, month, day);
-
-   // pass variable into hosroscope finder
-
-   generateAstrological(city);
+   displayNews(year, month, day);
 }
 
 // generate astrological sign form date input
@@ -80,19 +76,16 @@ function horoscopeSignFinder(month,day) {
    if (month == 12 && day <=20) {sign = "Sagittarius";}
    if (month == 12 && day >=21) {sign = "Capricorn";}
 
-   // if (month == "x" || day == "y") return;
+   if (month == "x" || day == "y") return;
    // pass sign into function to generate horoscope
    generateAstrological(sign);
-   console.log(sign);
+   // console.log(sign);
  }
 
 // fetches astrological data from third party API
 
-
-// RETURNS Astrological SIGNS
-
 function generateAstrological (sign) {
-   fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign +"&day=today", {
+   fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign + "&day=today", {
 	"method": "POST",
 	"headers": {
 		"x-rapidapi-key": "9c4972a57dmshb34194303b62712p1b697fjsn85a919b3ee7d",
@@ -105,10 +98,10 @@ function generateAstrological (sign) {
          throw response.json();
       }
       return response.json()
-     
    })
    .then(function (data) {
-    console.log(data);
+      console.log(data);
+      displayAstrological(data);
    })
    .catch(err => {
       console.error(err);
@@ -117,8 +110,14 @@ function generateAstrological (sign) {
 }
 
 function displayAstrological(astroData) {
-   console.log(astroData);
+   console.log(astroData.color);
 
+      colorEl.innerHTML = astroData.color;
+      compatibilityEl.innerHTML = astroData.compatibility;
+      descriptionEl.innerHTML = astroData.description;
+      luckyNumberEl.innerHTML = astroData.lucky_number;
+      luckyTimeEl.innerHTML = astroData.lucky_time;
+      moodEl.innerHTML = astroData.mood
 }
 
 
@@ -129,7 +128,7 @@ https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/02/04
 
 // uses Wikipedia api to return results for givne month and day
 
-function getNews (year, month, day){
+function displayNews (year, month, day){
 
    // generate api query for day and month
    // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
@@ -146,7 +145,7 @@ function getNews (year, month, day){
       return response.json()
    })
    .then(function (data) {
-      // console.log(data);
+      console.log(data);
       if (data.mostread.articles.length === 0) {
          mostReadEl = "There are no events for this day"
          return;
