@@ -1,3 +1,4 @@
+
 // declre search varibales
 var birthLocation = document.querySelector("#birthLocation");
 var birthDate = document.querySelector("#birthDate");
@@ -192,9 +193,3 @@ submitEl.addEventListener("click", renderSearch);
 //return_astrological (thesign);
 // born_date="1969-12-25" ; //YYYY-mo-day
 // return_news(1969,12,25);
-
-
-
-
-
-
