@@ -88,7 +88,10 @@ function horoscopeSignFinder(month,day) {
 
 // fetches astrological data from third party API
 
-function generateAstrological (sign){
+
+// RETURNS Astrological SIGNS
+
+function generateAstrological (sign) {
    fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign +"&day=today", {
 	"method": "POST",
 	"headers": {
@@ -102,18 +105,20 @@ function generateAstrological (sign){
          throw response.json();
       }
       return response.json()
+     
    })
    .then(function (data) {
-   //  console.log(data);
-   //  displayAstrological(data);
+    console.log(data);
    })
    .catch(err => {
       console.error(err);
    });
+   
 }
 
 function displayAstrological(astroData) {
    console.log(astroData);
+
 }
 
 
