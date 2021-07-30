@@ -26,17 +26,19 @@ html, body {
     color:#4AD3DA;
 }
 
-.header h5 {
+/* .header h5 { */
+.header p{
     display: inline-block;
     font-size: 18px;
     color:whitesmoke;
 }
 
-.wrapper {
+/*******************wrapper*/
+/* .row {
     min-height:100%;
     height:auto;
    
-}
+} */
 
 
 .footer {
@@ -115,12 +117,13 @@ button[type=submit]:hover {
     width: 65%;
     display: inline-block;
 }
+/*********************************************************/
 
-.row {
+/* .row {
     width: 100%;
     padding-top: 5px;
     margin-top: 10px;
-}
+} */
 
 
 .half-row {
@@ -162,4 +165,45 @@ button[type=submit]:hover {
     font-weight: bold;
     font-style: italic;
 
+}
+@media screen and (max-width: 992px) {
+    .half-row{
+        /* max-width: 490; */
+        display: inline-block;
+    }
+} 
+/*Responsive for the page*/
+@media screen and (max-width: 786px) {
+    
+    .half-row{
+        display: inline-block;
+    }
+    .header h1 {
+        font-size: 32px;
+     }
+     
+     .header h5 {
+        font-size: 16px;
+      }
+     label {
+        font-size: 12px;
+    }
+}
+
+/*Responsive for the page*/
+@media screen and (max-width: 576px) {
+    .half-row{
+        display: inline-block;
+    }
+    .header h1 {
+        font-size: 18px;
+     }
+     
+     .header h5 {
+        font-size: 10px;
+        
+     }
+     label {
+         font-size: 11px;
+     }
 }
