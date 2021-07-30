@@ -45,6 +45,7 @@ function renderSearch(event) {
 //   console.log(year, month, day, city);
 
   // pass variables into sign finder
+  document.getElementById('newsContent').innerHTML = "";
    horoscopeSignFinder(month, day);
    displayNews(year, month, day);
 }
@@ -113,12 +114,12 @@ function generateAstrological (sign) {
 function displayAstrological(astroData) {
    console.log(astroData.color);
 
-      colorEl.innerHTML = astroData.color;
-      compatibilityEl.innerHTML = astroData.compatibility;
-      descriptionEl.innerHTML = astroData.description;
-      luckyNumberEl.innerHTML = astroData.lucky_number;
-      luckyTimeEl.innerHTML = astroData.lucky_time;
-      moodEl.innerHTML = astroData.mood
+      colorEl.innerHTML = "<span style='color:black; font-weight: bold;'>Your color: </span>" + astroData.color;
+      compatibilityEl.innerHTML = "<span style='color:black; font-weight: bold;'>Your compatibility : </span>" +astroData.compatibility;
+      descriptionEl.innerHTML = "<span style='color:black; font-weight: bold;'>Description: </span>" + astroData.description;
+      luckyNumberEl.innerHTML = "<span style='color:black; font-weight: bold;'>Lucky Number: </span>" + astroData.lucky_number;
+      luckyTimeEl.innerHTML = "<span style='color:black; font-weight: bold;'>Lucky Time: </span>" + astroData.lucky_time;
+      moodEl.innerHTML = "<span style='color:black; font-weight: bold;'>Mood: </span>"  + astroData.mood;
 }
 
 
@@ -151,26 +152,36 @@ function displayNews (year, month, day){
          mostReadEl = "There are no events for this day"
          return;
       }
+         var Ulist=document.createElement("div");
+         var ulIndex=document.createElement("ul");
     for (var i = 0; i < data.mostread.articles.length; i++) {
 
          // create link to insert data
+         
+         var liIndex=document.createElement("li");
+         
          var eventEl = document.createElement('a');
 
          // turn result into link to article
          eventEl.setAttribute("href", data.mostread.articles[i].content_urls.desktop.page);
          eventEl.setAttribute("target", "_blank");
+   
 
          var eventTitle = document.createElement("span");
+          eventTitle.setAttribute('style','color:white;padding-left:5px;');
          eventTitle.textContent = data.mostread.articles[i].description;
 
          eventEl.appendChild(eventTitle);
 
-         var displayEvent = document.createElement("span");
+       var displayEvent = document.createElement("span");
 
-         eventEl.appendChild(displayEvent);
-
-         mostReadEl.appendChild(eventEl);
+          eventEl.appendChild(displayEvent);
+         liIndex.append(eventEl);
+         ulIndex.append(liIndex);
     }
+   
+    Ulist.append(ulIndex);
+    mostReadEl.appendChild(Ulist);
    })
    .catch(err => {
       console.error(err);
