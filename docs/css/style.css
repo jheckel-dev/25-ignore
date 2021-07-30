@@ -7,72 +7,78 @@
 html, body {
     background-color: #d9dcd6;
     height: 100%;
+    width: 100%;
+    max-width: 1366px;
+    max-height: 768px;
+    margin: 0 auto;
     
 }
 
 .header {
-    padding: 25px;
+    /* padding: 25px; */
+    /* font from fonts.google.com*/
     font-family: 'Anton', sans-serif;
     font-family: 'STIX Two Math', serif;
     background-color: #2a607c;
     text-align: center;
+    max-height: 25%;
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
-
+/* define a font-size for the h1 in header*/
 .header h1 {
     display: inline-block;
     font-size: 48px;
     color:#4AD3DA;
 }
 
-/* .header h5 { */
-.header p{
+/* define a font-size for the h5 in header*/
+.lead {
     display: inline-block;
     font-size: 18px;
     color:whitesmoke;
 }
 
-/*******************wrapper*/
-/* .row {
+/*define a div between header & footer for the form input and the result of APIs*/
+.wrapper {
     min-height:100%;
     height:auto;
    
-} */
+}
 
 
 .footer {
     width:100%;
-    height:25px;
+    height:35px;
     background-color:#2a607c;
     color:#FFF;
+    display: inline-block;
 }
 
-hr{
-    border:0;
-    border-bottom:1px dashed #CCC;
-}
 
+/* 2 label in our project(Birth Location & Birth Date) */
 label{
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
     text-align: left;
     font-weight: bold;
     color:#1E4558;
-  
+    display: inline;
 }
-
+ /* One input text for getting the location*/
 input[type=text] {
-    width: 60%;
-    padding: 8px 11px;
-    margin: 8px 0;
+    width: 90%;
+    padding: 2px;
+    margin: 2px;
     display: inline;
     border: 1px solid #ccc;
     border-radius: 4px;
    
 }
+
+/* One input for getting the date from Calender*/
 input[type=date] {
-    width: 60%;
+    width: 90%;
     padding: 5px 9px;
     margin: 2px 0;
     display: inline;
@@ -80,6 +86,7 @@ input[type=date] {
     border-radius: 4px;
 }
 
+/* Submit button for sending the information to APIs*/
 button[type=submit] {
     width: 50%;
     background-color: #2a607c;
@@ -95,77 +102,90 @@ button[type=submit] {
 button[type=submit]:hover {
     background-color: #45a049;
 }
- 
+
+/* Attribute for the form*/
 .formInput {
     border-radius: 10px;
     background-color: #f2f2f2;
     border: 2px solid gray;
-    width: 30%;
+    width: 95%;
+    max-width: 400px;
     margin: auto;
     box-shadow: 10px 10px 5px -5px #666;
-
+    height: 30%;
+    clear: both;
 }
-
+/* The form divided in 2 columns, first column for the labels*/
 .firstColumn {
-    width: 25%;
+    width: 30%;
     display: inline-block;
-    padding-left: 5px;
-    margin-left: 5px;
+    padding: 3px;
+    margin: 3px;
+    float:left;
 }
 
+/* Second Column of form for input and submit button*/
 .secondColumn {
     width: 65%;
     display: inline-block;
+    float: left;
 }
-/*********************************************************/
 
-/* .row {
+/*Define a row for returning the result of APIs and divided in 2 columns*/
+.rowInput {
     width: 100%;
     padding-top: 5px;
     margin-top: 10px;
-} */
+    max-width: 1366px;
+    clear: both;
+}
 
+/*Each colum show the news and Astronomy*/
 
 .half-row {
-    width: 49%;
-    display: inline-block;
+   width: 100%;
+    max-width: 670px;
+    display: inline;
     border: 2px solid #980602;
     border-radius: 10px;
     background-color: #DF0803;
     color:white;
-    box-shadow: inset 0 0 5px 3px #AE0602;
-    margin:5px;
+    box-shadow: inset 0 0 5px 3px #AE0602; 
+    float: left;
 }
 
-.half-row h3{
+
+/* h5 in half-row has the tittles of News and Astronomy*/
+.half-row h5{
 
     text-align: left;
     padding-left: 3px;
-    margin-left: 5px;
-}
-.enterDate {
-    background-position: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 12px;
-    color:white;
-
+    margin-left: 3px;
 }
 
+/*footer for the website*/
 .footer {
-    height: 60px;
-    padding: 5px;
+    height: 75px;
+    width: 100%;
+    /* padding: 5px; */
     clear: both;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
 }
 
-.footer span{
+/* Define the team name in span*/
+.footer p, span{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 13px;
     font-weight: bold;
     font-style: italic;
-
 }
+/* .row{
+    width: 100%;
+
+} */
+
+/*Responsive for the page*/
 @media screen and (max-width: 992px) {
     .half-row{
         /* max-width: 490; */
@@ -179,11 +199,11 @@ button[type=submit]:hover {
         display: inline-block;
     }
     .header h1 {
-        font-size: 32px;
+        font-size: 33px;
      }
      
-     .header h5 {
-        font-size: 16px;
+     .lead {
+        font-size: 15px;
       }
      label {
         font-size: 12px;
@@ -196,10 +216,10 @@ button[type=submit]:hover {
         display: inline-block;
     }
     .header h1 {
-        font-size: 18px;
+        font-size: 16px;
      }
      
-     .header h5 {
+     .lead {
         font-size: 10px;
         
      }
