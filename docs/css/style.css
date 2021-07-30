@@ -134,6 +134,7 @@ button[type=submit]:hover {
     background-color: #DF0803;
     color:white;
     box-shadow: inset 0 0 5px 3px #AE0602;
+    margin:5px;
 }
 
 .half-row h3{
