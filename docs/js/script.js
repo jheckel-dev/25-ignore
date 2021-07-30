@@ -1,6 +1,6 @@
 
 // declre search varibales
-var birthLocation = document.querySelector("#birthLocation");
+// var birthLocation = document.querySelector("#birthLocation");
 var birthDate = document.querySelector("#birthDate");
 var submitEl = document.querySelector("#submit");
 
@@ -11,7 +11,6 @@ var submitEl = document.querySelector("#submit");
 var mostReadEl = document.querySelector("#newsContent");
 
 //Astrological containers
-
 var colorEl = document.querySelector("#color");
 var compatibilityEl = document.querySelector("#compatibility");
 var descriptionEl = document.querySelector("#description");
@@ -27,7 +26,7 @@ var day;
 
 //declare location input
 
-var city;
+// var city;
 
 
 //function to render search results
@@ -41,7 +40,7 @@ function renderSearch(event) {
   year = birthDate.value.substring(0,4);
   month = birthDate.value.substring(5,7);
   day = birthDate.value.substring(8,10);
-  city =birthLocation.value;
+//   city =birthLocation.value;
 //   console.log(year, month, day, city);
 
   // pass variables into sign finder
@@ -112,13 +111,13 @@ function generateAstrological (sign) {
 
 function displayAstrological(astroData) {
    console.log(astroData.color);
-
-      colorEl.innerHTML = astroData.color;
+   
+      colorEl.innerHTML = 'test'+astroData.color;
       compatibilityEl.innerHTML = astroData.compatibility;
       descriptionEl.innerHTML = astroData.description;
       luckyNumberEl.innerHTML = astroData.lucky_number;
       luckyTimeEl.innerHTML = astroData.lucky_time;
-      moodEl.innerHTML = astroData.mood
+      moodEl.innerHTML = astroData.mood;
 }
 
 
