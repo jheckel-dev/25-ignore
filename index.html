@@ -17,54 +17,39 @@
         <div class="row column text-center">
           <h1>What happened the day I was born?</h1>
           <p class="lead">Enter your information to see what was going on when you were born!</p>
-      <div class="center">
-        <div class="callout secondary formInput">
+      <div>
+        <div class="med-12">
           <form id="form">
-            <div class="row">
-              <div class="small-12 columns firstColumn">
-                <label>Birth Location:</label>
+            <div>
+                  <input type="text" id ="birthLocation" placeholder="Enter your Birth Location">
               </div>
-              <div class="small-12 columns secondColumn">
-                  <input type="text" id="birthLocation" placeholder="Example: Seattle">
+              <div>
+                  <input type="date" id="birthDate" name="birthdate" placeholder="Enter Birthday" >
               </div>
-              <div class="small-12 columns firstColumn">
-                <label>Birth Date:</label>
-              </div>
-              <div class="small-12 columns secondColumn">
-                  <input type="date" id="birthDate" name="birtdate" placeholder="select Birth date" >
-              </div>
-              <div class="small-12 columns firstColumn"></div>
-              <div class="small-12 columns secondColumn">
                 <button type="submit" class="button" id="submit">Enter</button>
               </div>
             </div>
           </form>
         </div>
-      <div class="small-12 large-6 columns half-row">
-        <h3>News</h3>
-        <div id = "newsContent"></div>
-      </div>
-      <div id="atro-data" class="small-12 large-6 columns half-row">
-        <h3>Astrology</h3>
-        <div id = "color"> </div>
-        <div id = "compatibility"></div>
-        <div id = "description"></div>
-        <div id = "luckyNumber"></div>
-        <div id = "luckyTime"></div>
-        <div id = "mood"></div>
-      </div>
-    </div>
-    <div class = "row">
-        <div class="medium-6 columns half-row">
-            <h3>News & Event</h3>
+      <div>
         </div>
-        <div class="medium-6 columns half-row">
-            <h3>Astrology</h3>
+        <div class="column half-row">
+          <h3>News</h3>
+          <div id = "newsContent"></div>
+        </div class = "row">
+        <div id="atro-data" class="column half-row">
+          <h3>Astrology</h3>
+          <div id = "color"> </div>
+          <div id = "compatibility"></div>
+          <div id = "description"></div>
+          <div id = "luckyNumber"></div>
+          <div id = "luckyTime"></div>
+          <div id = "mood"></div>
         </div>
-    </div>
-    <div class="row column">
+      </div>
+      </div>
+    <div class="row column"></div>
       <footer>
-        <hr>
       <p>Created by the UW code bootcamp team</p>
       </footer>
       </div>
