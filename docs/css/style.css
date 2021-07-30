@@ -166,7 +166,14 @@ footer {
     font-size: 13px;
     font-weight: bold;
     font-style: italic;
+}
 
+#news{ 
+    margin-top: 50px;
+}
+
+#astro {
+    margin-top: 50px;
 }
 @media screen and (max-width: 992px) {
     .half-row{

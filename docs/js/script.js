@@ -135,7 +135,7 @@ function displayNews (year, month, day){
    // generate api query for day and month
    // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
    // generate qpi query for year day and month
-  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day;
+  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day + "?per_page=9";
    fetch(request_url, {
       "method": "GET"
       }
@@ -154,7 +154,7 @@ function displayNews (year, month, day){
       }
          var Ulist=document.createElement("div");
          var ulIndex=document.createElement("ul");
-    for (var i = 0; i < data.mostread.articles.length; i++) {
+    for (var i = 0; i < 8; i++) {
 
          // create link to insert data
          
