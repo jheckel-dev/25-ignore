@@ -1,89 +1,73 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What events have occured on your?</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <title>What happened the day I was born</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous" />
+    crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="docs/css/style.css">
   </head>
-  <body>
 
 <body>
-  <header class="header">
-    <div>
-      <h1>What has happened on your birthday?</h1>
-    </div>
-    <div>
-      <h5>Enter your birth day to see what has happened on your Birthdays!</h5>
-    </div>
-  </header>
-  <div class="wrapper">
-    <div class="formInput">
-      <form id="form">
-        <div class="row">
-
-          <div class="firstColumn">
-            <label>Birth Location:</label>
-          </div>
-          <div class="secondColumn">
-            <input type="text" placeholder="Example: Seattle" id="birthLocation">
-          </div>
-
-
-          <div class="firstColumn">
-            <label>Birth Date: </label>
-          </div>
-          <div class="secondColumn">
-            <input type="date" id="birthDate" name="birtdate" placeholder="select Birth date">
-          </div>
-
-
-          <div class="firstColumn"></div>
-          <div class="secondColumn">
-            <button type="submit" id="submit">submit</button>
-          </div>
-
+    <div class="callout large header">
+        <div class="row column text-center">
+          <h1>What happened the day I was born?</h1>
+          <p class="lead">Enter your information to see what was going on when you were born!</p>
         </div>
-      </form>
-    </div>
+      </div>
 
+    <br>
 
     <div class="row">
-      <div class="half-row">
-        <h3>News</h3>
-        <div id = "newsContent"></div>
-      </div>
-      <div class="half-row">
-        <h3>Astronomy</h3>
-        <div id = "color"></div>
-        <div id = "compatibility"></div>
-        <div id = "description"></div>
-        <div id = "luckyNumber"></div>
-        <div id = "luckyTime"></div>
-        <div id = "mood"></div>
-        
+      <div class="center">
+        <div class="callout secondary formInput">
+          <form id="form">
+            <div class="row">
+              <div class="small-12 columns firstColumn">
+                <label>Birth Location:</label>
+              </div>
+              <div class="small-12 columns secondColumn">
+                  <input type="text" id="birthLocation" placeholder="Example: Seattle">
+              </div>
+              <div class="small-12 columns firstColumn">
+                <label>Birth Date:</label>
+              </div>
+              <div class="small-12 columns secondColumn">
+                  <input type="date" id="birthDate" name="birtdate" placeholder="select Birth date" >
+              </div>
+              <div class="small-12 columns firstColumn"></div>
+              <div class="small-12 columns secondColumn">
+                <button type="submit" class="button" id="submit">Enter</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
-    <p>Created by the UW code bootcamp team</p>
-    <p><span class="">Ben Koala&nbsp;,&nbsp;Jalen Heckel&nbsp;,&nbsp;Taylor Anderson&nbsp;,&nbsp;Elham Bazazzadeh</span>
-    </p>
-  </div>
+    <div class = "row">
+        <div class="medium-6 columns half-row">
+            <h3>News & Event</h3>
+        </div>
+        <div class="medium-6 columns half-row">
+            <h3>Astrology</h3>
+        </div>
+    </div>
+    <div class="row column">
+      <footer>
+        <hr>
+      <p>Created by the UW code bootcamp team</p>
+      </footer>
+      </div>
 
-
-  </div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-    <script src="docs/js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+        <script>
+          $(document).foundation();
+        </script>
+        <script src="docs/js/script.js"></script>
   </body>
 </html>
