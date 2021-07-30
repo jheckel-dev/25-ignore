@@ -165,3 +165,44 @@ button[type=submit]:hover {
     font-style: italic;
 
 }
+@media screen and (max-width: 992px) {
+    .half-row{
+        /* max-width: 490; */
+        display: inline-block;
+    }
+} 
+/*Responsive for the page*/
+@media screen and (max-width: 786px) {
+    
+    .half-row{
+        display: inline-block;
+    }
+    .header h1 {
+        font-size: 32px;
+     }
+     
+     .header h5 {
+        font-size: 16px;
+      }
+     label {
+        font-size: 12px;
+    }
+}
+
+/*Responsive for the page*/
+@media screen and (max-width: 576px) {
+    .half-row{
+        display: inline-block;
+    }
+    .header h1 {
+        font-size: 18px;
+     }
+     
+     .header h5 {
+        font-size: 10px;
+        
+     }
+     label {
+         font-size: 11px;
+     }
+}
