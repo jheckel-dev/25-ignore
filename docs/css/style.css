@@ -1,3 +1,16 @@
+:root {
+    --primary: #659DBD;
+    --secondary: #FBEEC1;
+    --tertiary: #DAAD86;
+    --light-dark: #BC986A;
+    --dark: #BC986A;
+    --green: #8D8741;
+    --border-radius: 0.3rem;
+}
+
+h1 {
+    color: white;
+}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -10,11 +23,16 @@ html, body {
     
 }
 
+#footer {
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
 .header {
     padding: 25px;
-    font-family: 'Anton', sans-serif;
-    font-family: 'STIX Two Math', serif;
-    background-color: #2a607c;
+    font-family: 'Spectral SC', serif;
+
+    background-color: var(--primary);
     text-align: center;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -23,7 +41,7 @@ html, body {
 .header h1 {
     display: inline-block;
     font-size: 48px;
-    color:#4AD3DA;
+    color: white;
 }
 
 /* .header h5 { */
@@ -41,7 +59,8 @@ html, body {
 } */
 
 
-.footer {
+footer {
+    margin-top: 20px;
     width:100%;
     height:25px;
     background-color:#2a607c;
@@ -54,7 +73,7 @@ hr{
 }
 
 label{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Spectral SC', serif;
     font-size: 14px;
     text-align: left;
     font-weight: bold;
@@ -82,8 +101,9 @@ input[type=date] {
 
 button[type=submit] {
     width: 50%;
-    background-color: #2a607c;
-    color: white;
+    background-color: white;
+    font-size: 12;
+    color:var--(primary);
     padding: 5px 9px;
     margin: 2px 0;
     border: none;
@@ -92,13 +112,11 @@ button[type=submit] {
     display: inline;
 }
  
-button[type=submit]:hover {
-    background-color: #45a049;
-}
+
  
 .formInput {
     border-radius: 10px;
-    background-color: #f2f2f2;
+    background-color: black;
     border: 2px solid gray;
     width: 30%;
     margin: auto;
@@ -145,28 +163,37 @@ button[type=submit]:hover {
 }
 .enterDate {
     background-position: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Spectral SC', serif;
     font-size: 12px;
     color:white;
 
 }
+
+ /* remove bullet points */
+ul > li
+{
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+/* allign to the left */
+ul {
+    text-align: left;
+}
+#astro {
+    text-align: left;
+}
+
 
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
+    background-color: var(--primary);
     color: white;
     text-align: center;
-}
-
-.footer span{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    font-style: italic;
-}
+  }
 
 #news{ 
     margin-top: 50px;
@@ -175,6 +202,29 @@ footer {
 #astro {
     margin-top: 50px;
 }
+
+#button {
+    background-color:white;
+    color: var(--primary);
+}
+
+h1.lead, p.lead {
+    text-shadow: 2px 2px var(--dark)
+}
+
+button:hover{
+    background-color:white;
+    font-weight: bolder;
+  }
+
+#news, #astro {
+    background-color: var(--dark);
+    box-shadow: var(--primary);
+
+    border-style: solid;
+    border-color: white;
+}
+
 @media screen and (max-width: 992px) {
     .half-row{
         /* max-width: 490; */

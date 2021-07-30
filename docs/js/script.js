@@ -113,13 +113,12 @@ function generateAstrological (sign) {
 
 function displayAstrological(astroData) {
    console.log(astroData.color);
-
-      colorEl.innerHTML = "<span style='color:black; font-weight: bold;'>Your color: </span>" + astroData.color;
-      compatibilityEl.innerHTML = "<span style='color:black; font-weight: bold;'>Your compatibility : </span>" +astroData.compatibility;
-      descriptionEl.innerHTML = "<span style='color:black; font-weight: bold;'>Description: </span>" + astroData.description;
-      luckyNumberEl.innerHTML = "<span style='color:black; font-weight: bold;'>Lucky Number: </span>" + astroData.lucky_number;
-      luckyTimeEl.innerHTML = "<span style='color:black; font-weight: bold;'>Lucky Time: </span>" + astroData.lucky_time;
-      moodEl.innerHTML = "<span style='color:black; font-weight: bold;'>Mood: </span>"  + astroData.mood;
+      colorEl.innerHTML = "<span style='color:gold; font-weight: bold;'>Your color: </span>" + astroData.color;
+      compatibilityEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Your compatibility : </span>" +astroData.compatibility;
+      descriptionEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Description: </span>" + astroData.description;
+      luckyNumberEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Lucky Number: </span>" + astroData.lucky_number;
+      luckyTimeEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Lucky Time: </span>" + astroData.lucky_time;
+      moodEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Mood: </span>"  + astroData.mood;
 }
 
 
@@ -154,7 +153,7 @@ function displayNews (year, month, day){
       }
          var Ulist=document.createElement("div");
          var ulIndex=document.createElement("ul");
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 7; i++) {
 
          // create link to insert data
          
