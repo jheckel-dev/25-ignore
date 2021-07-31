@@ -1,14 +1,15 @@
 
 // declre search varibales
-var birthLocation = document.querySelector("#birthLocation");
+// var birthLocation = document.querySelector("#birthLocation");
 var birthDate = document.querySelector("#birthDate");
 var submitEl = document.querySelector("#submit");
 
 
 // Declare variable containers to fill
 
-// News container
+// News containers
 var mostReadEl = document.querySelector("#newsContent");
+var newsOnDay = document.querySelector("#newsContentDay");
 
 //Astrological containers
 
@@ -41,13 +42,14 @@ function renderSearch(event) {
   year = birthDate.value.substring(0,4);
   month = birthDate.value.substring(5,7);
   day = birthDate.value.substring(8,10);
-  city =birthLocation.value;
+//   city =birthLocation.value;
 //   console.log(year, month, day, city);
 
   // pass variables into sign finder
-  document.getElementById('newsContent').innerHTML = "";
+  document.getElementById("newsContent").innerHTML = "";
    horoscopeSignFinder(month, day);
    displayNews(year, month, day);
+   displayNewsDay(year, month, day);
 }
 
 // generate astrological sign form date input
@@ -113,13 +115,12 @@ function generateAstrological (sign) {
 
 function displayAstrological(astroData) {
    console.log(astroData.color);
-
-      colorEl.innerHTML = "<span style='color:black; font-weight: bold;'>Your color: </span>" + astroData.color;
-      compatibilityEl.innerHTML = "<span style='color:black; font-weight: bold;'>Your compatibility : </span>" +astroData.compatibility;
-      descriptionEl.innerHTML = "<span style='color:black; font-weight: bold;'>Description: </span>" + astroData.description;
-      luckyNumberEl.innerHTML = "<span style='color:black; font-weight: bold;'>Lucky Number: </span>" + astroData.lucky_number;
-      luckyTimeEl.innerHTML = "<span style='color:black; font-weight: bold;'>Lucky Time: </span>" + astroData.lucky_time;
-      moodEl.innerHTML = "<span style='color:black; font-weight: bold;'>Mood: </span>"  + astroData.mood;
+      colorEl.innerHTML = "<span style='color:gold; font-weight: bold;'>Your color: </span>" + astroData.color;
+      compatibilityEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Your compatibility : </span>" +astroData.compatibility;
+      descriptionEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Description: </span>" + astroData.description;
+      luckyNumberEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Lucky Number: </span>" + astroData.lucky_number;
+      luckyTimeEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Lucky Time: </span>" + astroData.lucky_time;
+      moodEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Mood: </span>"  + astroData.mood;
 }
 
 
@@ -135,7 +136,7 @@ function displayNews (year, month, day){
    // generate api query for day and month
    // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
    // generate qpi query for year day and month
-  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day;
+  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day ;
    fetch(request_url, {
       "method": "GET"
       }
@@ -154,7 +155,7 @@ function displayNews (year, month, day){
       }
          var Ulist=document.createElement("div");
          var ulIndex=document.createElement("ul");
-    for (var i = 0; i < data.mostread.articles.length; i++) {
+    for (var i = 0; i < 6; i++) {
 
          // create link to insert data
          
@@ -168,14 +169,13 @@ function displayNews (year, month, day){
    
 
          var eventTitle = document.createElement("span");
-          eventTitle.setAttribute('style','color:white;padding-left:5px;');
-         eventTitle.textContent = data.mostread.articles[i].description;
-
+         eventTitle.setAttribute('style','color:white;padding-left:5px;');          
+         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>Description: </span>" + data.mostread.articles[i].description + "<br />";
          eventEl.appendChild(eventTitle);
 
        var displayEvent = document.createElement("span");
 
-          eventEl.appendChild(displayEvent);
+         eventEl.appendChild(displayEvent);
          liIndex.append(eventEl);
          ulIndex.append(liIndex);
     }
@@ -189,6 +189,63 @@ function displayNews (year, month, day){
    
 }
 
+function displayNewsDay (year, month, day){
+
+   // generate api query for day and month
+   // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
+   // generate qpi query for year day and month
+  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day ;
+   fetch(request_url, {
+      "method": "GET"
+      }
+   )
+   .then(response => {
+      if (!response.ok) {
+         throw response.json();
+      }
+      return response.json()
+   })
+   .then(function (data) {
+      console.log(data);
+      if (data.onthisday.length === 0) {
+         newsOnDay = "There are no events for this day"
+         return;
+      }
+         var Ulist=document.createElement("div");
+         var ulIndex=document.createElement("ul");
+    for (var i = 0; i < 4; i++) {
+
+         // create link to insert data
+         var liIndex=document.createElement("li");
+         
+         var eventEl = document.createElement('a');
+
+        // turn result into link to article
+        eventEl.setAttribute("href", data.onthisday[i].pages[0].content_urls.desktop.page);
+        eventEl.setAttribute("target", "_blank");
+   
+
+         var eventTitle = document.createElement("span");
+         eventTitle.setAttribute('style','color:white;padding-left:5px;');          
+         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>News: </span>" + data.onthisday[i].text + "<br />";
+         eventEl.appendChild(eventTitle);
+
+       var displayEvent = document.createElement("span");
+
+         eventEl.appendChild(displayEvent);
+         liIndex.append(eventEl);
+         ulIndex.append(liIndex);
+    }
+   
+    Ulist.append(ulIndex);
+    console.log(newsOnDay);
+    newsOnDay.appendChild(Ulist);
+   })
+   .catch(err => {
+      console.error(err);
+   });
+   
+}
 
 // Add listener to submit element for searhc function
 submitEl.addEventListener("click", renderSearch);
