@@ -26,9 +26,11 @@ var year;
 var month;
 var day;
 
-//declare location input
+// limit calendar to past dates
 
-var city;
+var currentDate = moment().format("YYYY-MM-DD");
+console.log(currentDate);
+document.getElementById("birthDate").max = currentDate
 
 
 //function to render search results
