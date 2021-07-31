@@ -7,8 +7,9 @@ var submitEl = document.querySelector("#submit");
 
 // Declare variable containers to fill
 
-// News container
+// News containers
 var mostReadEl = document.querySelector("#newsContent");
+var newsOnDay = document.querySelector("#newsContentDay");
 
 //Astrological containers
 
@@ -48,6 +49,7 @@ function renderSearch(event) {
   document.getElementById('newsContent').innerHTML = "";
    horoscopeSignFinder(month, day);
    displayNews(year, month, day);
+   displayNewsDay(year, month, day);
 }
 
 // generate astrological sign form date input
@@ -179,7 +181,7 @@ function displayNews (year, month, day){
     }
    
     Ulist.append(ulIndex);
-    mostReadEl.appendChild(Ulist);
+    newsOnDay.appendChild(Ulist);
    })
    .catch(err => {
       console.error(err);
@@ -187,6 +189,63 @@ function displayNews (year, month, day){
    
 }
 
+function displayNewsDay (year, month, day){
+
+   // generate api query for day and month
+   // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
+   // generate qpi query for year day and month
+  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day ;
+   fetch(request_url, {
+      "method": "GET"
+      }
+   )
+   .then(response => {
+      if (!response.ok) {
+         throw response.json();
+      }
+      return response.json()
+   })
+   .then(function (data) {
+      console.log(data);
+      if (data.mostread.articles.length === 0) {
+         mostReadEl = "There are no events for this day"
+         return;
+      }
+         var Ulist=document.createElement("div");
+         var ulIndex=document.createElement("ul");
+    for (var i = 0; i < 6; i++) {
+
+         // create link to insert data
+         
+         var liIndex=document.createElement("li");
+         
+         var eventEl = document.createElement('a');
+
+        // turn result into link to article
+        eventEl.setAttribute("href", data.onthisday[i].pages[0].content_urls.desktop.page);
+        eventEl.setAttribute("target", "_blank");
+   
+
+         var eventTitle = document.createElement("span");
+         eventTitle.setAttribute('style','color:white;padding-left:5px;');          
+         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>News: </span>" + data.onthidsay[i].text + "<br />";
+         eventEl.appendChild(eventTitle);
+
+       var displayEvent = document.createElement("span");
+
+          eventEl.appendChild(displayEvent);
+         liIndex.append(eventEl);
+         ulIndex.append(liIndex);
+    }
+   
+    Ulist.append(ulIndex);
+    newsOnDay.appendChild(Ulist);
+   })
+   .catch(err => {
+      console.error(err);
+   });
+   
+}
 
 // Add listener to submit element for searhc function
 submitEl.addEventListener("click", renderSearch);

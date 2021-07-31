@@ -149,7 +149,7 @@ button[type=submit] {
 
 
 .half-row {
-    width: 50%;
+    width: 33%;
     display: inline-block;
     border: 2px solid #980602;
     border-radius: 10px;
@@ -188,14 +188,6 @@ ul {
     text-align: left;
 }
 
-#news{ 
-    margin-top: 50px;
-}
-
-#astro {
-    margin-top: 50px;
-}
-
 #button {
     background-color:white;
     color: var(--primary);
@@ -221,7 +213,7 @@ button:hover{
     font-weight: bolder;
   }
 
-#news, #astro {
+#news, #astro, #newsOnDay {
     background-color: var(--dark);
     box-shadow: var(--primary);
 
