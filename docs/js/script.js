@@ -1,6 +1,6 @@
 
 // declre search varibales
-var birthLocation = document.querySelector("#birthLocation");
+// var birthLocation = document.querySelector("#birthLocation");
 var birthDate = document.querySelector("#birthDate");
 var submitEl = document.querySelector("#submit");
 
@@ -42,11 +42,11 @@ function renderSearch(event) {
   year = birthDate.value.substring(0,4);
   month = birthDate.value.substring(5,7);
   day = birthDate.value.substring(8,10);
-  city =birthLocation.value;
+//   city =birthLocation.value;
 //   console.log(year, month, day, city);
 
   // pass variables into sign finder
-  document.getElementById('newsContent').innerHTML = "";
+  document.getElementById("newsContent").innerHTML = "";
    horoscopeSignFinder(month, day);
    displayNews(year, month, day);
    displayNewsDay(year, month, day);
@@ -175,13 +175,13 @@ function displayNews (year, month, day){
 
        var displayEvent = document.createElement("span");
 
-          eventEl.appendChild(displayEvent);
+         eventEl.appendChild(displayEvent);
          liIndex.append(eventEl);
          ulIndex.append(liIndex);
     }
    
     Ulist.append(ulIndex);
-    newsOnDay.appendChild(Ulist);
+    mostReadEl.appendChild(Ulist);
    })
    .catch(err => {
       console.error(err);
@@ -207,16 +207,15 @@ function displayNewsDay (year, month, day){
    })
    .then(function (data) {
       console.log(data);
-      if (data.mostread.articles.length === 0) {
-         mostReadEl = "There are no events for this day"
+      if (data.onthisday.length === 0) {
+         newsOnDay = "There are no events for this day"
          return;
       }
          var Ulist=document.createElement("div");
          var ulIndex=document.createElement("ul");
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 4; i++) {
 
          // create link to insert data
-         
          var liIndex=document.createElement("li");
          
          var eventEl = document.createElement('a');
@@ -228,17 +227,18 @@ function displayNewsDay (year, month, day){
 
          var eventTitle = document.createElement("span");
          eventTitle.setAttribute('style','color:white;padding-left:5px;');          
-         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>News: </span>" + data.onthidsay[i].text + "<br />";
+         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>News: </span>" + data.onthisday[i].text + "<br />";
          eventEl.appendChild(eventTitle);
 
        var displayEvent = document.createElement("span");
 
-          eventEl.appendChild(displayEvent);
+         eventEl.appendChild(displayEvent);
          liIndex.append(eventEl);
          ulIndex.append(liIndex);
     }
    
     Ulist.append(ulIndex);
+    console.log(newsOnDay);
     newsOnDay.appendChild(Ulist);
    })
    .catch(err => {
