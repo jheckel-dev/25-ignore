@@ -168,7 +168,7 @@ function displayNews (year, month, day){
 
          var eventTitle = document.createElement("span");
          eventTitle.setAttribute('style','color:white;padding-left:5px;');          
-         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>Title: </span>" + data.mostread.articles[i].description + "<br />";
+         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>Description: </span>" + data.mostread.articles[i].description + "<br />";
          eventEl.appendChild(eventTitle);
 
        var displayEvent = document.createElement("span");
