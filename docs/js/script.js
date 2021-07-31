@@ -46,10 +46,12 @@ function renderSearch(event) {
 //   console.log(year, month, day, city);
 
   // pass variables into sign finder
-  document.getElementById("newsContent").innerHTML = "";
+   document.getElementById("newsContentDay").innerHTML = "";
+   document.getElementById("newsContent").innerHTML = "";
    horoscopeSignFinder(month, day);
    displayNews(year, month, day);
    displayNewsDay(year, month, day);
+   
 }
 
 // generate astrological sign form date input
@@ -250,7 +252,7 @@ function displayNewsDay (year, month, day){
 // Add listener to submit element for searhc function
 submitEl.addEventListener("click", renderSearch);
 
-
+// localStorage.setItem('birthDate', JSON.stringify(birthDate))
 
 //A function that returns the horoscope Sign
 
