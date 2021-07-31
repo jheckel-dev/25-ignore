@@ -134,7 +134,7 @@ function displayNews (year, month, day){
    // generate api query for day and month
    // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
    // generate qpi query for year day and month
-  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day + "?per_page=9";
+  var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day ;
    fetch(request_url, {
       "method": "GET"
       }
@@ -153,7 +153,7 @@ function displayNews (year, month, day){
       }
          var Ulist=document.createElement("div");
          var ulIndex=document.createElement("ul");
-    for (var i = 0; i < 7; i++) {
+    for (var i = 0; i < 6; i++) {
 
          // create link to insert data
          
@@ -167,9 +167,8 @@ function displayNews (year, month, day){
    
 
          var eventTitle = document.createElement("span");
-          eventTitle.setAttribute('style','color:white;padding-left:5px;');
-         eventTitle.textContent = data.mostread.articles[i].description;
-
+         eventTitle.setAttribute('style','color:white;padding-left:5px;');          
+         eventTitle.innerHTML = "<span style='color:gold; font-weight: bold;'>Title: </span>" + data.mostread.articles[i].description + "<br />";
          eventEl.appendChild(eventTitle);
 
        var displayEvent = document.createElement("span");
