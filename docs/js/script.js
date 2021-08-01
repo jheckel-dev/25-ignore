@@ -188,6 +188,7 @@ function displayNews (year, month, day){
     mostReadEl.appendChild(Ulist);
    })
    .catch(err => {
+      mostReadEl.innerHTML="<p style='padding:30px 0px'>There are no data for this year-Most viewed articles are shown for years after 2016</p>";
       console.error(err);
    });
    
@@ -196,7 +197,7 @@ function displayNews (year, month, day){
 function displayNewsDay (year, month, day){
 
    // generate api query for day and month
-   // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
+  // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
    // generate qpi query for year day and month
   var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day ;
    fetch(request_url, {
@@ -217,7 +218,7 @@ function displayNewsDay (year, month, day){
       }
          var Ulist=document.createElement("div");
          var ulIndex=document.createElement("ul");
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 5; i++) {
 
          // create link to insert data
          var liIndex=document.createElement("li");
@@ -246,6 +247,7 @@ function displayNewsDay (year, month, day){
     newsOnDay.appendChild(Ulist);
    })
    .catch(err => {
+      newsOnDay.innerHTML="<p style='padding:30px 0px'>There are no events for this day-Only events after year 2000 are shown</p>";
       console.error(err);
    });
    
