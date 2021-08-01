@@ -2,7 +2,7 @@
      In this app we are taking the users DOB and putting it into two separate APIs to show the users astrological information and important events on that day in history.
 
  ## Motivation:
-     We all a have a birthday but some of us don't know what is relevant about the day we were born. We wanted to provide users with some information regarding their date of birth. We provide them with important world events on their day of birth, their power color, the signs they are most compatible with, a description of their personality, their lucky number, their lucky time, and their general mood.
+     Birthday's are special days, and people want to know what was going on when it was their day. When a user inserts the date of their latest brithday we provide them with important world events on their day of birth, their power color, the signs they are most compatible with, a description of their personality, their lucky number, their lucky time, and their general mood.
 
  ## Build: v 1.0
 
