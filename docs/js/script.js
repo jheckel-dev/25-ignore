@@ -1,6 +1,5 @@
 
 // declre search varibales
-// var birthLocation = document.querySelector("#birthLocation");
 var birthDate = document.querySelector("#birthDate");
 var submitEl = document.querySelector("#submit");
 
@@ -44,8 +43,7 @@ function renderSearch(event) {
   year = birthDate.value.substring(0,4);
   month = birthDate.value.substring(5,7);
   day = birthDate.value.substring(8,10);
-//   city =birthLocation.value;
-//   console.log(year, month, day, city);
+
 
   // pass variables into sign finder
    document.getElementById("newsContentDay").innerHTML = "";
@@ -87,7 +85,6 @@ function horoscopeSignFinder(month,day) {
    if (month == "x" || day == "y") return;
    // pass sign into function to generate horoscope
    generateAstrological(sign);
-   // console.log(sign);
  }
 
 // fetches astrological data from third party API
@@ -102,13 +99,13 @@ function generateAstrological (sign) {
 })
    .then(response => {
       if (!response.ok) {
-         // signContent.innerHTML="There is no data for this year";
          throw response.json();
       }
       return response.json()
    })
    .then(function (data) {
       console.log(data);
+      // sends astrological data into display function
       displayAstrological(data);
    })
    .catch(err => {
@@ -117,29 +114,20 @@ function generateAstrological (sign) {
    
 }
 
+// displays astrological data
 function displayAstrological(astroData) {
    console.log(astroData.color);
       colorEl.innerHTML = "<span style='color:gold; font-weight: bold;'>Your color: </span>" + astroData.color;
-      compatibilityEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Your compatibility : </span>" +astroData.compatibility;
+      compatibilityEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Your compatibility: </span>" +astroData.compatibility;
       descriptionEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Description: </span>" + astroData.description;
       luckyNumberEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Lucky Number: </span>" + astroData.lucky_number;
       luckyTimeEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Lucky Time: </span>" + astroData.lucky_time;
       moodEl.innerHTML = "<span style='color:gold;; font-weight: bold;'>Mood: </span>"  + astroData.mood;
 }
 
-
-//Wikipedia application fornews feed that happen on a given day
-/* For news feed --Better info. Need to match birth year to event
-https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/02/04
-*/
-
-// uses Wikipedia api to return results for givne month and day
+// uses Wikipedia api to return results for given month and day
 
 function displayNews (year, month, day){
-
-   // generate api query for day and month
-   // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
-   // generate qpi query for year day and month
   var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day ;
    fetch(request_url, {
       "method": "GET"
@@ -194,11 +182,9 @@ function displayNews (year, month, day){
    
 }
 
-function displayNewsDay (year, month, day){
+// function to display news that happened on given date
 
-   // generate api query for day and month
-  // var request_url="https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/" + month + "/" + day;
-   // generate qpi query for year day and month
+function displayNewsDay (year, month, day){
   var request_url="https://en.wikipedia.org/api/rest_v1/feed/featured/" + year +"/" + month + "/" +day ;
    fetch(request_url, {
       "method": "GET"
@@ -254,17 +240,5 @@ function displayNewsDay (year, month, day){
    
 }
 
-// Add listener to submit element for searhc function
-submitEl.addEventListener("click", renderSearch);
-
-// localStorage.setItem('birthDate', JSON.stringify(birthDate))
-
-//A function that returns the horoscope Sign
-
-// var signContent = document.querySelector('#signtext');
-// var thesign= horoscope_sign(12,25);
-// console.log(thesign);
-// signContent.innerHTML=" <h1>Your horoscope sign is : " + thesign +"</h1>";
-//return_astrological (thesign);
-// born_date="1969-12-25" ; //YYYY-mo-day
-// return_news(1969,12,25);
+// Add listener to submit element for search function
+submitEl.addEventListener("click", renderSearch);s
