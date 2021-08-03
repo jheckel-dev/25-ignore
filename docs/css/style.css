@@ -19,10 +19,7 @@ h1 {
 
 html, body {
     background-color: #d9dcd6;
-    height: 100%;
-    margin-bottom: 20px;
-    
-    
+    min-height: 100%;
 }
 
 /* change submit button size */
@@ -54,19 +51,18 @@ html, body {
     color: white;
 }
 
-/* .header h5 { */
+
 .header p{
     display: inline-block;
     font-size: 18px;
     color:whitesmoke;
 }
 
-/*******************wrapper*/
-/* .row {
+/* define the space between header and footer */
+.wrapper {
     min-height:100%;
     height:auto;
-   
-} */
+}
 
 hr{
     border:0;
@@ -113,38 +109,7 @@ button[type=submit] {
     display: inline;
 }
  
-
- 
-.formInput {
-    border-radius: 10px;
-    background-color: black;
-    border: 2px solid gray;
-    width: 30%;
-    margin: auto;
-    box-shadow: 10px 10px 5px -5px #666;
-
-}
-
-.firstColumn {
-    width: 25%;
-    display: inline-block;
-    padding-left: 5px;
-    margin-left: 5px;
-}
-
-.secondColumn {
-    width: 65%;
-    display: inline-block;
-}
-/*********************************************************/
-
-/* .row {
-    width: 100%;
-    padding-top: 5px;
-    margin-top: 10px;
-} */
-
-
+/* devided the div tag in 3 parts for showing the result */
 .half-row {
     width: 33.333333333333%;
     display: inline-block;
@@ -161,6 +126,7 @@ button[type=submit] {
     text-align: left;
     padding-left: 3px;
     margin-left: 5px;
+    font-size: 20px;
 }
 .enterDate {
     background-position: center;
@@ -190,9 +156,8 @@ ul {
     color: var(--primary);
 }
 
-footer {
-    height: auto;
-    position: fixed;
+.footer {   
+   height: auto;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -202,9 +167,20 @@ footer {
   }
 
 
+
 h1.lead, p.lead {
-    text-shadow: 2px 2px var(--dark)
+    text-shadow: 2px 2px var(--dark);
+    
 }
+h1.lead {
+    font-size: 42px;
+}
+
+p.lead{
+    font-size: 16px;
+}
+
+
 
 button:hover{
     background-color:white;
@@ -221,8 +197,8 @@ button:hover{
 
 @media screen and (max-width: 992px) {
     .half-row{
-        /* max-width: 490; */
         display: inline-block;
+        font-size: 12px;
     }
 } 
 /*Responsive for the page*/
@@ -231,16 +207,22 @@ button:hover{
     .half-row{
         width: 100%;
         display: block;
+        font-size: 11px;
         
     }
-    .header h1 {
-        font-size: 32px;
-     }
-     
-     .header h5 {
-        font-size: 16px;
-      }
-     label {
+
+    h1.lead {
+        font-size: 20px;
+    }
+    
+    p.lead{
+        font-size: 14px;
+    }
+
+    .half-row h3{
+        font-size: 18px;
+    }
+    label {
         font-size: 12px;
     }
 }
@@ -250,17 +232,21 @@ button:hover{
     .half-row{
         width: 100%;
         display: block;
+        font-size: 9px;
         
     }
-    .header h1 {
+
+    h1.lead {
         font-size: 18px;
-     }
-     
-     .header h5 {
-        font-size: 10px;
-        
-     }
-     label {
+    }
+    
+    p.lead{
+        font-size: 12px;
+    }
+    .half-row h3{
+        font-size: 14px;
+    }
+    label {
          font-size: 11px;
      }
      

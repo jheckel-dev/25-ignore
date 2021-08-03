@@ -19,47 +19,43 @@
 <body>
     <div class="callout large header content-wrap">
         <div class="row column text-center">
-          <h1 class = "lead">What happened on your Birthday?</h1>
-          <p class="lead">The appication queries wikipedia for events occuring on your birthday and dislays your current astrological informaiton.</p>
+          <h1 class = "lead">What happened the day You were born?</h1>
+          <p class="lead">The application queires wikipedia for events occuring on your birthday and displays your current astrological informaiton.</p>
     </div>
-      <div>
-        <div class="med-12">
-          <form id="form">
-            <!-- <div>     
-                  <input type="text" id ="birthLocation" placeholder="Enter your Birth Location">
-              </div> -->
-              <div>
-                  <input type="date" id="birthDate" name="birthdate" placeholder="Enter Birthday" >
-              </div>
+    <div>
+      <div class="med-12">
+        <form id="form">
+          <div><input type="date" id="birthDate" name="birthdate" placeholder="Enter Birthday" ></div>
                 <button type="submit" name = "submit" id="submit">Submit</button>
-
           </div>
-        </div>
       </div>
-        <div id="displayResults">
-          <div id = "news" class="column half-row">
-            <h3>Most viewed Articles:</h3>
-            <div id = "newsContent"></div>
-          </div class = "row">
-          <div id = "newsOnDay" class="column half-row">
-            <h3>Happened on this Day:</h3>
-            <div id = "newsContentDay"></div>
-          </div class = "row">
-          <div id="astro" class="column half-row">
-            <h3>Astrological Informaion:</h3>
-            <div id = "color"> </div>
-            <div id = "compatibility"></div>
-            <div id = "description"></div>
-            <div id = "luckyNumber"></div>
-            <div id = "luckyTime"></div>
-            <div id = "mood"></div>
-          </div>
-          </div>
-        </div>
+    </div>
+    <div class="wrapper">
+    <div id="displayResults"> <!-- class="wrapper"-->
+      <div id = "news" class="column half-row">
+        <h3>Most viewed Articles:</h3>
+        <div id = "newsContent"></div>
       </div>
-      <div id="wrapper">
-      <footer id = "footerSpace">Made by Taylor A. Ben K. Elham B. and Jalen H.</footer>
+      <div id = "newsOnDay" class="column half-row">
+        <h3>Happened on this Day:</h3>
+        <div id = "newsContentDay"></div>
       </div>
+      <div id="astro" class="column half-row">
+        <h3>Astrological Informaion:</h3>
+        <div id = "color"> </div>
+        <div id = "compatibility"></div>
+        <div id = "description"></div>
+        <div id = "luckyNumber"></div>
+        <div id = "luckyTime"></div>
+        <div id = "mood"></div>
+      </div>
+    </div>
+  </div>
+  <!-- </div>
+      </div> -->
+     <div class="footer"> <!-- id="wrapper"-->
+      <footer id = "footerSpace">Created by University of Washington Group Project</footer>
+     </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
         <script>

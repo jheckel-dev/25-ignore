@@ -217,6 +217,7 @@ function displayNewsDay (year, month, day){
          return;
       }
          var Ulist=document.createElement("div");
+
          var ulIndex=document.createElement("ul");
     for (var i = 0; i < 5; i++) {
 
