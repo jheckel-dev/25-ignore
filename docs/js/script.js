@@ -188,7 +188,7 @@ function displayNews (year, month, day){
     mostReadEl.appendChild(Ulist);
    })
    .catch(err => {
-      mostReadEl.innerHTML="<p style='padding:30px 0px'>There are no data for this year-Most viewed articles are shown for years after 2016</p>";
+      mostReadEl.innerHTML="<span style='color:gold; font-weight: bold;'>No data available: </span> <span style='padding:30px 0px'>This feature was implemented in 2016</span>";
       console.error(err);
    });
    
@@ -248,7 +248,7 @@ function displayNewsDay (year, month, day){
     newsOnDay.appendChild(Ulist);
    })
    .catch(err => {
-      newsOnDay.innerHTML="<p style='padding:30px 0px'>There are no events for this day-Only events after year 2000 are shown</p>";
+      newsOnDay.innerHTML="<span style='color:gold; font-weight: bold;'>No data available: </span> <span style='padding:30px 0px'>This feature was implemented in 2000</span>";;
       console.error(err);
    });
    
