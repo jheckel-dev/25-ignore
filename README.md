@@ -23,4 +23,4 @@
      Credit goes to Taylor Anderson, Ben Koala, and Elham Bazazzadeh. Jalen Heckel acted as project manager for the project.
  ## Links:
      GitHub Repo: https://github.com/jheckel-dev/birthday-project
-     Deployed URL: 
+     Deployed URL: https://jheckel-dev.github.io/signs-and-events/
