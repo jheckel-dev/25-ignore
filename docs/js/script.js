@@ -1,4 +1,3 @@
-
 // declre search varibales
 var birthDate = document.querySelector("#birthDate");
 var submitEl = document.querySelector("#submit");
@@ -45,9 +44,20 @@ function renderSearch(event) {
   day = birthDate.value.substring(8,10);
 
 
-  // pass variables into sign finder
+  // clear containers
    document.getElementById("newsContentDay").innerHTML = "";
    document.getElementById("newsContent").innerHTML = "";
+
+   colorEl.innerHTML = "";
+   compatibilityEl.innerHTML = "";
+   descriptionEl.innerHTML = "";
+   luckyNumberEl.innerHTML = "";
+   luckyTimeEl.innerHTML = "";
+   moodEl.innerHTML = "";
+
+
+    // pass variables into sign finder
+
    horoscopeSignFinder(month, day);
    displayNews(year, month, day);
    displayNewsDay(year, month, day);
@@ -241,4 +251,4 @@ function displayNewsDay (year, month, day){
 }
 
 // Add listener to submit element for search function
-submitEl.addEventListener("click", renderSearch);s
+submitEl.addEventListener("click", renderSearch);
